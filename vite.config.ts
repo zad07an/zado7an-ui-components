@@ -1,8 +1,19 @@
-import { reactRouter } from "@react-router/dev/vite";
-import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import react from "@vitejs/plugin-react-swc";
+import tailwindcss from "@tailwindcss/vite";
 
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  plugins: [tailwindcss(), react()],
+  build: {
+    lib: {
+      entry: "src/index.ts",
+      name: "Zado7anUIComponents",
+      formats: ["es", "cjs"],
+      fileName: (format) => `index.${format}.js`,
+    },
+    rollupOptions: {
+      external: ["react", "react-dom"],
+    },
+  },
 });
