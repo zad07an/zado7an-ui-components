@@ -1,15 +1,14 @@
 {
   "name": "zado7an-ui-components",
-  "private": false,
   "version": "0.0.4",
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.cjs",
-  "types": "dist/index.d.ts",
+  "private": false,
+  "main": "dist/index.cjs",      
+  "module": "dist/index.esm.js",  
+  "types": "dist/index.d.ts",    
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
@@ -21,8 +20,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsup index.ts --dts --format esm,cjs",
-    "prepare": "npm run build",
+    "build": "tsup index.ts --dts --format esm,cjs", 
+    "prepare": "npm run build",  
     "lint": "eslint .",
     "preview": "vite preview"
   },
