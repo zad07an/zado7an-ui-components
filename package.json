@@ -3,12 +3,13 @@
   "version": "0.0.5",
   "private": false,
   "main": "dist/index.cjs",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
@@ -27,13 +28,16 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
+    "@types/node": "^22.13.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tailwindcss": "^4.0.6",
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
+    "@types/react": "^19.0.8",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "esbuild-plugin-alias": "^0.2.1",
     "eslint": "^9.19.0",
     "tsup": "^7.2.0",
     "typescript": "~5.7.2",
